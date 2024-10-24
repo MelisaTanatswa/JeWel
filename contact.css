@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+    font-family:  "Lobster Two", sans-serif;
+}
+.navbar-brand:hover{
+    color: black;
+
+}
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    font-family: "Saira Condensed", sans-serif;
+    text-transform: none;
+}
+nav-link:hover{
+    color: black;
+}
+.search{
+    height: 40px;
+    width: 80%;
+    border-radius: 60px;
+    outline: none;
+    margin-right: -35px;
+    font-family: "Saira Condensed", sans-serif;
+    border: 2px solid rgb(248, 26, 156);
+}
+.btn0{
+     height: 40px;
+    width: 40%; 
+    outline: none;
+    border:none;
+    background: rgb(248, 26, 178) ;
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+}
+form {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color:deeppink;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: wheat;
+}
+

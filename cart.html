@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cart</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #cartItem {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .cart-item p {
+            margin: 0 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JeWel Shopping Cart</h1>
+        <div id="count">0</div> <!-- To display number of items in cart -->
+    </header>
+    
+    <main>
+        <div id="cartItem"></div>
+        <h2 id="total">Total: $0.00</h2>
+    </main>
+
+    <footer>
+        <button onclick="window.location.href='shop.html'">Continue Shopping</button>
+    </footer>
+
+    <script>
+        // Retrieve cart from local storage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Function to display cart items
+        function displayCart() {
+            const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+            document.getElementById("count").innerHTML = cart.length;
+            document.getElementById("cartItem").innerHTML = "";
+
+            if (cart.length === 0) {
+                document.getElementById("cartItem").innerHTML = "Your cart is empty";
+                document.getElementById("total").innerHTML = "$0.00";
+            } else {
+                cart.forEach((item, index) => {
+                    document.getElementById("cartItem").innerHTML += `
+                        <div class="cart-item">
+                            <p>${item.name}</p>
+                            <p>$${item.price.toFixed(2)}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                            <p>Subtotal: $${(item.price * item.quantity).toFixed(2)}</p>
+                            <button onclick="removeFromCart(${index})">Remove</button>
+                            <button onclick="decrementQuantity(${index})">-</button>
+                            <button onclick="incrementQuantity(${index})">+</button>
+                        </div>
+                    `;
+                });
+                document.getElementById("total").innerHTML = `Total: $${total.toFixed(2)}`;
+            }
+        }
+
+        // Function to remove item from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        // Function to increment quantity
+        function incrementQuantity(index) {
+            cart[index].quantity += 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        // Function to decrement quantity
+        function decrementQuantity(index) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                removeFromCart(index);
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        // Display cart items on page load
+        displayCart();
+    </script>
+</body>
+</html>

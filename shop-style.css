@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+    font-family:  "Lobster Two", sans-serif;
+}
+.navbar-brand:hover{
+    color: black;
+
+}
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    font-family: "Saira Condensed", sans-serif;
+    text-transform: none;
+}
+nav-link:hover{
+    color: black;
+}
+.search{
+    height: 40px;
+    width: 80%;
+    border-radius: 60px;
+    outline: none;
+    margin-right: -35px;
+    font-family: "Saira Condensed", sans-serif;
+    border: 2px solid rgb(248, 26, 156);
+}
+.btn0{ height: 40px;
+    width: 40%;
+    outline: none;
+    border:none;
+    background: rgb(248, 26, 178) ;
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    width: 25%; /* Adjust width to fit 4 products per row */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Adjust image height */
+    object-fit: cover;
+}
+
+.product-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.add-to-cart {
+    background-color: deeppink;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .product-card {
+        width: 50%; /* 2 products per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* 1 product per row on smallest screens */
+    }
+}
+/* Add to Cart button */
+.btn-primary {
+    background-color: deeppink;  /* Deep pink color */
+    border-color: deeppink  /* Deep pink color */
+    color(white )
+}
+
+/* Hover effect */
+.btn-primary:hover {
+    background-color: #FFC0CB;  /* Lighter deep pink color */
+    border-color: #FFC0CB;  /* Lighter deep pink color */
+}
+
