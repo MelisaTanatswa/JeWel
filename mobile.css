@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .nav-link {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    .search {
+      width: 70%;
+      margin-right: 0;
+    }
+    .btn0 {
+      width: 30%;
+    }
+    .navbar-toggler {
+      border: none;
+      padding: 0.5rem 0.5rem;
+    }
+    .navbar-toggler-icon {
+      font-size: 1.5rem;
+    }
+  }
+  
