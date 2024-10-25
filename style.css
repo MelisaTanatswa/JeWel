@@ -41,8 +41,41 @@ nav-link:hover{
     border-radius: 60px;
     font-weight: 700;
 }
+@media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    .search {
+      width: 70%;
+      margin-right: 0;
+    }
+    .btn0 {
+      width: 30%;
+    }
+  }
+  
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .navbar-toggler-icon {
+    font-size: 1.5rem;
+  }
+  
+  .collapse {
+    display: none;
+  }
+  
+  .collapse.show {
+    display: block;
+  }  
 .main{
-    background: url('images/woman-s-arms-wearing-golden-jewelry.jpg')no-repeat;
+    background: url(/images/woman-s-arms-wearing-golden-jewelry.jpg)no-repeat;
     background-size: cover;
     height: 100vh;
     background-position: 50% 50%;
@@ -77,7 +110,7 @@ h1{
 transition: 0.5s;
 }
 .jewelry{
-    background:url('images/hair-7978357_1280.jpg')no-repeat;
+    background:url(/images/hair-7978357_1280.jpg)no-repeat;
     background-size: cover;
     height: 80vh;
     width: 100%;
